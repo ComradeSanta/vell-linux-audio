@@ -1,0 +1,12 @@
+[Unit]
+Description=Vell CS35L41 amps: route through DSP with per-speaker ChromeOS tuning
+After=wireplumber.service
+Wants=wireplumber.service
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/vell-amp-init.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target

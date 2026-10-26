@@ -1,0 +1,12 @@
+[Unit]
+Description=Push Waves speaker tuning into SOF codec adapter (vell)
+After=wireplumber.service
+Wants=wireplumber.service
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/vell-waves-init.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
